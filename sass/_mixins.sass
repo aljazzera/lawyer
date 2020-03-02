@@ -1,0 +1,69 @@
+@mixin caption
+	position: relative
+	text-align: center
+	font-size: 42px
+	line-height: 42px
+	font-weight: 900
+	text-transform: uppercase
+	font-family: $primary-font
+
+@mixin dark-button
+	color: black
+	font-family: $primary-font
+	padding: 20px 35px
+	background:#c8a869
+	border: none
+	border-radius: 3px
+	font-size: 14px
+	font-weight: 900
+	line-height: 24px
+	cursor: pointer
+	text-transform: uppercase
+
+@mixin light-button
+	color: $primary-color
+	font-family: $primary-font
+	border: 1px solid $primary-color
+	padding: 20px 55px
+	border: none
+	background: $secondary-color
+	border-radius: 3px
+	font-size: 14px
+	font-weight: 900
+	line-height: 24px
+	cursor: pointer
+	text-transform: uppercase
+
+@mixin line
+	content: ''
+	position: absolute
+	bottom: -20px
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 500px
+	height: 30px
+	background: #fbf5e9
+	z-index: -1
+
+@mixin dark-line
+	content: ''
+	position: absolute
+	bottom: -20px
+	left: 50%
+	transform: translate(-50%, -50%)
+	width: 500px
+	height: 30px
+	background: #f4dcad
+	z-index: -1
+  
+@mixin small-line
+	content: ''
+	position: absolute
+	bottom: -10px
+	left: 50%
+	-webkit-transform: translate(-50%, -50%)
+	transform: translate(-50%, -50%)
+	width: 100%
+	height: 18px
+	background-color: #f4dcad
+	z-index: -1

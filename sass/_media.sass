@@ -1,0 +1,305 @@
+@media (max-width: 1199px)
+  .header
+    &-nav
+      &__item
+        margin-right: 15px
+  .footer
+    &-nav
+      &__item
+        margin-right: 15px
+@media (max-width: 1138px)
+  .header
+    &-phone
+      font-size: 20px
+  .footer
+    &-phone
+      font-size: 20px
+@media (max-width: 1081px)
+  .header
+    &-adress
+      display: none
+  .main
+    &-block
+      &__title
+        font-size: 54px
+      &__subtitle
+        font-size: 26px
+      &__text
+        font-size: 16px
+      &__button
+        &-item
+          font-size: 12px
+  .help
+    &-caption
+      font-size: 20px
+  .advantages
+    &-block
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+  .work
+    &-block
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+  .price
+    &-block
+      flex-wrap: nowrap
+    &-title
+      font-size: 20px
+    &-description
+      font-size: 14px
+  .reviews
+    &-block
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+
+  .footer
+    &-adress
+      display: none
+
+@media (max-width: 870px)
+  .header
+    &-contact
+      display: none
+  .main
+    &-block
+      &__title
+        font-size: 40px
+      &__subtitle
+        font-size: 20px
+      &__text
+        font-size: 16px
+      &__button
+        &-item
+          font-size: 12px
+  .man-name
+    font-size: 56px
+  .description
+    &-block
+      &__title
+        font-size: 36px
+  .help
+    &-caption
+      font-size: 16px
+    &-list
+      &__item
+        font-size: 12px
+  .services-caption, .advantages-caption,
+  .price-caption, .reviews-caption,
+  .work-caption
+      font-size: 36px
+  .footer
+    &-contact
+      display: none
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) 
+  body.lock
+    overflow: hidden
+  .header-nav
+    display: none
+  .menu-icon
+    display: block
+    cursor: pointer
+    z-index: 5
+  .adaptive-nav
+    display: block
+    position: fixed
+    top: -100%
+    left: 0 
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.9)
+    padding-top: 60px
+    overflow: auto
+    text-align: center
+    &__item
+      list-style-type: none
+      margin-bottom: 25px
+  .adaptive-nav.active
+    top: 0
+  .nav__link
+    color: #ffffff
+    font-size: 26px
+    &:hover
+      color: #c8a869
+      text-decoration: underline
+  .price
+    &-block
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+      &__item
+        max-width: 190px
+        margin-top: 5px
+  .footer
+    &-nav
+      display: none
+
+@media (max-width: 620px) 
+  .advantages
+    &-block
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+      &__item
+        margin-top: 10px
+  .services-caption, .advantages-caption, .price-caption, .reviews-caption, .work-caption
+    font-size: 26px
+  .work
+    &-block
+      display: grid
+      grid-template-columns: repeat(1, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+  .contact
+    &-block
+      &__item1
+        width: 100%
+      &__item2
+        padding-left: 150px
+        &-wrapper
+          padding: 10px 0
+          &:not(:last-child) 
+            margin-bottom: 15px
+  #map
+    height: 300px
+
+@media (max-width: 510px) 
+  .reviews
+    &-block
+      display: grid
+      grid-template-columns: repeat(1, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+      &__item 
+        max-width: 380px
+        text-align: center
+        margin: 30px 0
+
+@media (max-width: 446px) 
+  .main
+    &-block
+      &__title
+        font-size: 32px
+      &__subtitle
+        font-size: 15px
+      &__text
+        font-size: 14px
+  .help
+    &-form
+      &__title
+        font-size: 20px
+      &__btn
+        margin-left: 10px
+  .services-caption, .advantages-caption, .price-caption, .reviews-caption, .work-caption
+    font-size: 20px
+  .services-caption::after, .advantages-caption::after, 
+  .price-caption::after, .reviews-caption::after, 
+  .work-caption::after
+    width: 250px
+  .price
+    &-info
+      &__title
+        font-size: 14px
+      &__text
+        font-size: 12px
+  .contact
+    &-block
+      &__item2 
+        padding-left: 70px
+  .man-name
+    font-size: 40px
+    text-align: center
+
+@media (max-width: 340px)  
+  .header
+    &-logo
+      &__text
+        & span
+          font-size: 11px
+        & h1 
+          font-size: 14px
+  .main
+    &-block
+      &__title
+        font-size: 26px
+      &__subtitle
+        font-size: 11px
+      &__text
+        font-size: 12px
+  .container
+    padding: 0 8px
+  .help
+    &-caption
+      font-size: 12px
+    &-block
+      padding: 50px 45px
+    &-form
+      &__btn
+        padding: 8px 30px
+        font-size: 8px
+
+  .services-btn, .description-block__button-item, .price-btn,
+  .reviews-btn,     
+    padding: 15px 30px
+    font-size: 10px
+  .footer
+    &-logo
+      &__text
+        & span
+          font-size: 11px
+        & h1 
+          font-size: 14px
+
+@media (max-width: 320px) 
+
+  .header
+    &-block
+      padding: 0 5px
+  .main
+    padding: 66px 0 55px
+  .description
+    padding: 80px 0 50px
+  .help
+    &-block
+      padding: 40px 26px
+  .services
+    padding: 0 0 25px 0
+  .advantages
+    padding: 80px 0 70px
+    &-block 
+      display: grid
+      grid-template-columns: repeat(1, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+  .price
+    padding: 100px 0 80px
+    &-block 
+      display: grid
+      grid-template-columns: repeat(1, 1fr)
+      grid-template-rows: auto
+      justify-items: center
+      &__item
+        margin-top: 30px
+  .questions
+    padding: 90px 0
+    &-button
+      margin-left: 15px
+    &-caption
+      font-size: 18px
+    &-block
+      &__title
+        font-size: 40px
+      &__text
+        font-size: 18px
+  .form-btn
+    padding: 10px 25px
+    font-size: 12px

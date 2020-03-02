@@ -1,0 +1,689 @@
+$primary-color: #c8a869
+$secondary-color: #ffffff
+$primary-font: 'Roboto', sans-serif
+$secondary-font: 'Montserrat', sans-serif
+
+@import 'mixins'
+
+*, ::after, ::before
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	outline: none
+	transition: .4s all
+
+ul
+	list-style-type: none
+a 
+	text-decoration: none
+      
+.wrapper
+	overflow: hidden
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+
+.container
+	max-width: 1240px
+	min-width: 320px
+	width: 100%
+	padding: 0 20px
+	margin: 0 auto
+	position: relative
+// ***************** HEADER *****************
+.header
+	position: fixed
+	background: rgba(0, 0, 0, 1)
+	font-family: $primary-font
+	width: 100%
+	padding: 8px 0
+	z-index: 10
+	&-block
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&-logo
+		display: flex
+		&__text
+			display: flex
+			flex-direction: column
+			margin-left: 10px
+			cursor: default
+			& span
+				font-size: 14px
+				line-height: 24px
+				font-weight: 400
+				color: $secondary-color
+			& h1
+				text-transform: uppercase
+				font-size: 18px
+				color: $secondary-color
+				margin: 0
+	&-nav
+		display: flex
+		&__item
+			margin-right: 25px
+			font-size: 12px
+			& a
+				color: $secondary-color
+				border-bottom: 1px solid transparent
+				transition: .3s all
+				&:hover
+					color: $primary-color
+					border-bottom: 1px solid $primary-color
+					text-transform: underline
+	&-adress
+		display: flex
+		flex-direction: column
+		margin: 0 25px
+		& span
+			font-family: 'Montserrat', sans-serif
+			color: $secondary-color
+			font-size: 14px
+			line-height: 16px
+			cursor: default
+	&-contact
+		display: flex
+		flex-direction: column
+	&-phone
+		color: $primary-color
+		font-size: 26px
+		font-weight: 900
+		&:hover
+			opacity: .7
+	&-btn
+		font-size: 12px
+		text-decoration: underline
+		color: $secondary-color
+		text-align: right
+		&:hover
+			color: $primary-color
+// ***************** / HEADER *****************
+// ***************** Adaptive menu ******************
+.adaptive-nav
+	display: none
+.menu-icon
+	display: none
+	position: relative
+	width: 30px
+	height: 5px
+	background-color: $secondary-color
+	&::before
+		position: absolute
+		left: 0
+		top: -10px
+		content: ''
+		width: 30px
+		height: 5px
+		background-color: $secondary-color
+		transition: transform 0.2s ease-in, top 0.2s linear 0.2s
+	&::after
+		position: absolute
+		left: 0
+		top: 10px
+		content: ''
+		width: 30px
+		height: 5px
+		background-color: $secondary-color
+		transition: transform 0.2s ease-in, top 0.2s linear 0.2s
+	&-wrapper
+		width: 40px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+		cursor: pointer
+
+.menu-icon.menu-icon-active 
+	background-color: transparent
+
+.menu-icon.menu-icon-active::before 
+	transform: rotate(45deg)
+	top: 0
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s
+
+.menu-icon.menu-icon-active::after 
+	transform: rotate(-45deg)
+	top: 0
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s
+
+
+// ***************** / Adaptive menu ******************
+
+// ***************** MAIN ***************** 
+
+.main
+	font-family: $primary-font
+	background: url('../img/header-bg.jpg') no-repeat
+	background-position: center
+	background-size: cover
+	position: relative
+	padding: 125px 15px 55px
+	z-index: 1
+	&::after
+		content: ''
+		position: absolute
+		display: block
+		bottom: 0
+		right: 12%
+		width: 100%
+		height: 650px
+		background: url('../img/man.png') no-repeat
+		background-position: right bottom
+		background-size: contain
+		z-index: -1
+	&-block
+		&__content
+			max-width: 800px
+			width: 100%
+		&__title
+			font-size: 72px
+			font-weight: 500
+			line-height: 72px
+			text-transform: uppercase
+			color: $primary-color
+		&__subtitle
+			display: block
+			font-size: 36px
+			font-weight: 300
+			text-transform: uppercase
+			color: $secondary-color
+			line-height: 24px
+			margin: 25px 0 35px
+		&__text
+			font-size: 18px
+			line-height: 30px
+			font-weight: 400
+			color: $secondary-color
+			margin-bottom: 40px
+			max-width: 620px
+		&__button
+			&-item
+				@include dark-button
+		&__name
+			margin-top: 55px
+			width: 100%
+			max-width: 910px
+.man-name
+	display: block
+	font-size: 72px
+	line-height: 72px
+	font-weight: 900
+	text-transform: uppercase
+	color: $primary-color
+	text-align: right
+
+// ***************** / MAIN *****************
+
+// ***************** DESCRIPTION *****************
+
+.description
+	padding: 80px 15px 50px
+	&-block
+		text-align: center
+		width: 100%
+		max-width: 755px
+		margin: 0 auto
+		position: relative
+		&__title
+			@include caption
+			&::after
+				@include line
+		&__info
+			margin: 40px 0 50px
+		&__button
+			&-item
+				@include light-button
+				border: 1px solid $primary-color
+				&:hover
+					background: $primary-color
+					color: $secondary-color
+
+// ***************** / DESCRIPTION *****************
+
+// ***************** help *****************
+.help
+	background: url('../img/form-bg.jpg') no-repeat
+	background-position: center
+	background-size: cover
+	position: relative
+	&-caption
+		background: $primary-color
+		font-family: $primary-font
+		text-align: center
+		font-size: 30px
+		line-height: 36px
+		font-weight: 700
+		padding: 25px 0
+		margin-top: 50px
+		width: 100%
+		& h3
+	&-block
+		display: flex
+		justify-content: space-around
+		align-items: center
+		flex-wrap: wrap
+		padding: 50px 20px
+
+		&__item
+	&-list
+		max-width: 380px
+		&__item
+			font-size: 14px
+			font-weight: 400
+			line-height: 18px
+			font-family: $primary-font
+			text-transform: uppercase
+			position: relative
+			&::before
+				content: ''
+				background: url(../img/list-flag.svg) center center no-repeat
+				background-size: cover
+				display: block
+				width: 22px
+				height: 20px
+				position: absolute
+				left: -30px
+			&:not(:last-child)
+				margin-bottom: 25px
+	&-form
+		display: flex
+		flex-direction: column
+		background: #f4dcad
+		padding: 20px
+		border-radius: 4px
+		&__title
+			font-size: 24px
+			line-height: 18px
+			font-family: 'Roboto', sans-serif
+			text-transform: uppercase
+			color: $primary-color
+			font-weight: 900
+			margin-bottom: 20px
+		&__item
+		&__btn
+			@include dark-button
+			margin: 0 auto
+			cursor: pointer
+			margin-left: 42px
+			&:hover
+				background: rgba(112, 87, 39, .7)
+.form-name, .form-phone
+	padding: 15px
+	width: 100%
+	outline: none
+	border: none
+	border-radius: 5px
+	margin-bottom: 10px
+
+.form-text
+	padding: 15px
+	width: 100%
+	height: 100px
+	border-radius: 5px
+	resize: none
+	outline: none
+	border: none
+	margin-bottom: 20px
+
+// ----------- / FORM ------------			
+
+// ***************** / Help *****************
+
+// ***************** Services *****************
+
+.services
+	padding: 105px 15px 120px
+	&-caption
+		@include caption
+		&::after
+			@include line
+	&-block
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+		&__item
+			max-width: 300px
+			& img
+				margin-top: 50px
+		&__title
+			color: $primary-color
+			font-family: 'Roboto', sans-serif
+			font-size: 26px
+			font-weight: 500
+			text-transform: uppercase
+			margin: 20px 0
+		&__text
+			font-family: 'Roboto', sans-serif
+			font-size: 14px
+			margin-bottom: 10px
+		&__btn
+			text-decoration: underline
+			color: $primary-color
+			font-family: 'Roboto', sans-serif
+			&:hover
+				opacity: .7
+	&-btn
+		@include dark-button
+		&:hover
+			background: rgba(112, 87, 39, .7)
+		&__wrapper
+			text-align: center
+			margin-top: 50px
+	
+// ***************** / Services *****************
+// ***************** Advantages *****************
+
+.advantages
+	background: #f9edd5
+	padding: 80px 15px 70px
+	z-index: 1
+	&-caption
+		@include caption
+		&::after
+			content: ''
+			position: absolute
+			bottom: -20px
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 500px
+			height: 30px
+			background: #f4dcad
+			z-index: -1
+	&-block
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		margin-top: 45px
+		&__item
+			max-width: 180px
+			text-align: center
+
+// ***************** / Advantages *****************
+// ***************** Price *****************
+
+.price
+	padding: 100px 15px 80px
+	&-caption
+		@include caption
+		&::after
+			content: ''
+			position: absolute
+			bottom: -20px
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 500px
+			height: 30px
+			background: #f4dcad
+			z-index: -1
+	&-block
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		margin-top: 60px
+		&__item
+			max-width: 280px
+	&-title
+		color: $primary-color
+		font-family: $primary-font
+		font-size: 26px
+		font-weight: 500
+	&-info
+		text-align: center
+		max-width: 780px
+		margin: 55px auto 60px
+		&__title
+			font-family: $primary-font
+			font-size: 18px
+			line-height: 30px
+			font-weight: 700
+		&__text
+			font-family: $primary-font
+	&-btn
+		@include light-button
+		border: 1px solid $primary-color
+		&:hover
+			background: $primary-color
+			color: $secondary-color
+		&__wrapper
+			text-align: center
+
+// ***************** / Price *****************
+// ***************** Reviews *****************
+
+.reviews
+	padding: 80px 0
+	background: #f9edd5
+	z-index: 1
+	&-caption
+		@include caption
+		&::after
+			@include dark-line
+	&-block
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+		&__item
+			max-width: 235px
+			text-align: center
+			margin: 70px 0
+	&-user__name
+		position: relative
+		font-size: 24px
+		line-height: 30px
+		color: black
+		font-weight: 700
+		text-transform: uppercase
+		font-family: $primary-font
+		margin: 40px 0 30px
+		&::after
+			@include small-line
+	&-btn
+		@include dark-button
+		border: 1px solid transparent
+		&:hover
+			background: $secondary-color
+			border: 1px solid $primary-color
+		&__wrapper
+			text-align: center
+		
+
+// ***************** / Reviews *****************
+// ***************** Work *****************
+.work
+	padding: 90px 15px 80px
+	&-caption
+		@include caption
+		&::after
+			@include dark-line		
+	&-block
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		&__item
+			max-width: 275px
+			position: relative
+			margin-top: 110px
+		&__number
+			position: absolute
+			top: -75%
+			left: -12%
+			font-size: 150px
+			color: #f9edd5
+			font-weight: 900
+			font-family: $primary-font
+			z-index: -1
+		&__title
+			font-size: 18px
+			font-family: $primary-font
+			color: black
+			line-height: 24px
+			font-weight: 700
+		&__text
+			font-size: 16px
+			font-family: $primary-font
+			color: black
+			line-height: 24px
+// ***************** / Work ***************** 
+// ***************** Questions ***************** 
+.questions
+	background: url('../img/contact-form-bg.jpg') no-repeat
+	background-position: center
+	background-size: cover
+	padding: 90px 15px
+	&-block
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+		&__item
+			width: 385px
+		&__title
+			font-size: 72px
+			color: #f4dcad
+			font-weight: 700
+			font-family: $primary-font
+			margin-bottom: 28px
+			text-transform: uppercase
+		&__text
+			font-size: 30px
+			color: $secondary-color
+			font-weight: 700
+			font-family: $primary-font
+			text-transform: uppercase
+			line-height: 40px
+	&-form
+		display: flex
+		flex-direction: column
+		background: #f4dcad
+		padding: 20px
+		border-radius: 4px
+	&-caption
+		font-size: 24px
+		line-height: 18px
+		font-family: 'Roboto', sans-serif
+		text-transform: uppercase
+		color: $primary-color
+		font-weight: 900
+		margin-bottom: 20px
+	&-button
+		margin: 0 auto
+		cursor: pointer
+		margin-left: 42px
+		
+.form-btn
+	@include dark-button
+	&:hover
+		background: rgba(112, 87, 39, .7)
+// ***************** / Questions ***************** 
+// ***************** Contact ***************** 
+.contact
+	&-block
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		&__item1
+			width: 60%
+		&__item2
+			flex: 40%
+			background: #7a6947
+			display: flex
+			flex-direction: column
+			justify-content: center
+			font-family: $primary-font
+			padding-left: 60px
+			&-wrapper
+				display: flex
+				color: $secondary-color
+				font-size: 18px
+				line-height: 24px
+				font-weight: 300
+				&:not(:last-child)
+					margin-bottom: 50px
+					
+			&-info
+				padding-left: 25px
+				&__title
+					font-weight: 700
+				&__subtitle
+					& a
+						color: $secondary-color
+						&:hover
+							color: blue
+#map
+    width: 100%
+    height: 500px
+// ***************** / Contact ***************** 
+// ***************** Footer ***************** 
+.footer
+	background: rgba(0, 0, 0, 1)
+	font-family: $primary-font
+	width: 100%
+	padding: 8px 0
+	z-index: 10
+	&-block
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&-logo
+		display: flex
+		&__text
+			display: flex
+			flex-direction: column
+			margin-left: 10px
+			cursor: default
+			& span
+				font-size: 14px
+				line-height: 24px
+				font-weight: 400
+				color: $secondary-color
+			& h1
+				text-transform: uppercase
+				font-size: 18px
+				color: $secondary-color
+				margin: 0
+	&-nav
+		display: flex
+		margin-left: 15px
+		&__item
+			margin-right: 25px
+			font-size: 12px
+			& a
+				color: $secondary-color
+				border-bottom: 1px solid transparent
+				transition: .3s all
+				&:hover
+					color: $primary-color
+					border-bottom: 1px solid $primary-color
+					text-transform: underline
+	&-adress
+		display: flex
+		flex-direction: column
+		margin: 0 25px
+		& span
+			font-family: 'Montserrat', sans-serif
+			color: $secondary-color
+			font-size: 14px
+			line-height: 16px
+			cursor: default
+	&-contact
+		display: flex
+		flex-direction: column
+	&-phone
+		color: $primary-color
+		font-size: 26px
+		font-weight: 900
+		&:hover
+			opacity: .7
+	&-btn
+		font-size: 12px
+		text-decoration: underline
+		color: $secondary-color
+		text-align: right
+		&:hover
+			color: $primary-color
+// ***************** / Footer *****************  
+
+
+
+@import 'media'
